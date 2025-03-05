@@ -7,6 +7,7 @@ This project is part of my MLOps portfolio, implementing a machine learning mode
 - API built using FastAPI
 - Dockerized application
 - Deployed on AWS EC2 with Docker
+- Automated CI/CD pipeline with GitHub Actions
 
 ## Setup Instructions
 
@@ -41,9 +42,15 @@ docker run -d --restart always -p 8000:8000 titanic-api
 ### 6. Deploy on AWS EC2
 Ensure Docker is installed on your EC2 instance and run:
 ```bash
-docker pull your-dockerhub-username/titanic-api
+# Stop any running container to prevent port conflicts
+docker stop titanic-api || true
+docker rm titanic-api || true
 
-docker run -d --restart always -p 8000:8000 your-dockerhub-username/titanic-api
+# Remove old images to free up space
+docker system prune -f
+
+docker pull your-dockerhub-username/titanic-api
+docker run -d --restart always -p 8000:8000 --name titanic-api your-dockerhub-username/titanic-api
 ```
 
 ## API Endpoints
@@ -79,12 +86,12 @@ POST /predict
 ```
 
 ## Future Improvements
-- Implement a CI/CD pipeline with GitHub Actions
-- Add model monitoring and logging
 - Improve model performance with feature engineering
+- Implement model monitoring and logging
+- Expand CI/CD pipeline to include automated testing and security scans
 
 ---
 
 ## Author
-oluwafemi oloye - [GitHub Profile](https://github.com/femi-oloye)
+Your Name - [GitHub Profile](https://github.com/your-github-username)
 
