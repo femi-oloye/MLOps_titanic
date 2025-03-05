@@ -72,7 +72,7 @@ POST /predict
 ```json
 {
   "Pclass": 3,
-  "Sex": "male",
+  "Sex": 1,
   "Age": 22,
   "SibSp": 1,
   "Parch": 0,
