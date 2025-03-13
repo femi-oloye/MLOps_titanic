@@ -93,5 +93,5 @@ POST /predict
 ---
 
 ## Author
-Your Name - [GitHub Profile](https://github.com/your-github-username)
+oluwafemi - [GitHub Profile](https://github.com/femi-oloye)
 
